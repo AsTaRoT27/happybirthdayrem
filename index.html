@@ -21,147 +21,42 @@
       padding: 80px 20px 40px;
       overflow: hidden;
     }
-    header h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #3B0270;
-      animation: fadeInDown 1s ease;
-      position: relative;
-      z-index: 2;
-    }
-    header p {
-      color: rgba(59, 2, 112, 0.8);
-      font-size: 1.1rem;
-      animation: fadeIn 2s ease;
-      position: relative;
-      z-index: 2;
-    }
+    header h1 { font-size: 3rem; font-weight: bold; color: #3B0270; animation: fadeInDown 1s ease; position: relative; z-index: 2; }
+    header p { color: rgba(59, 2, 112, 0.8); font-size: 1.1rem; animation: fadeIn 2s ease; position: relative; z-index: 2; }
 
     /* HEADER BALLOONS */
-    .header-balloon {
-      position: absolute;
-      width: 50px;
-      height: auto;
-      opacity: 0.8;
-      animation: floatUp 6s linear infinite;
-    }
-    @keyframes floatUp {
-      0% { transform: translateY(100%); opacity: 0.8; }
-      50% { opacity: 1; }
-      100% { transform: translateY(-150%); opacity: 0; }
-    }
+    .header-balloon { position: absolute; width: 50px; height: auto; opacity: 0.8; animation: floatUp 6s linear infinite; }
+    @keyframes floatUp { 0% { transform: translateY(100%); opacity: 0.8; } 50% { opacity: 1; } 100% { transform: translateY(-150%); opacity: 0; } }
 
     /* CONFETTI */
-    #confetti-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
+    #confetti-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
 
     /* ANIMATIONS */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideLeft {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideRight {
-      from { opacity: 0; transform: translateX(50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes slideRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
 
     /* VOICE SECTION */
-    .voice-section {
-      margin-top: 30px;
-      animation: fadeInUp 1.5s ease;
-    }
-    .voice-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: #3B0270;
-    }
-    .voice-section audio {
-      width: 80%;
-      max-width: 500px;
-      border: 2px solid #3B0270;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(111, 0, 255, 0.3);
-    }
+    .voice-section { margin-top: 30px; animation: fadeInUp 1.5s ease; }
+    .voice-section h2 { font-size: 1.8rem; margin-bottom: 10px; color: #3B0270; }
+    .voice-section audio { width: 80%; max-width: 500px; border: 2px solid #3B0270; border-radius: 12px; box-shadow: 0 4px 12px rgba(111, 0, 255, 0.3); }
 
     /* MEMORY SECTIONS */
-    main {
-      padding: 60px 20px;
-      position: relative;
-      z-index: 0;
-    }
-    .memory {
-      background: rgba(255, 241, 241, 0.85); 
-      border: 1px solid #E9B3FB;
-      border-radius: 20px;
-      margin: 40px auto;
-      max-width: 800px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(111, 0, 255, 0.2);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      color: #3B0270;
-    }
-    .memory:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 30px rgba(111, 0, 255, 0.4);
-    }
-    .memory img {
-      width: 100%;
-      border-radius: 15px;
-      transition: all 0.5s ease;
-    }
-    .memory img:hover {
-      transform: rotate(1deg) scale(1.05);
-    }
-    .memory p {
-      margin-top: 10px;
-      font-weight: 600;
-      color: #3B0270;
-    }
+    main { padding: 60px 20px; position: relative; z-index: 0; }
+    .memory { background: rgba(255, 241, 241, 0.85); border: 1px solid #E9B3FB; border-radius: 20px; margin: 40px auto; max-width: 800px; padding: 20px; text-align: center; box-shadow: 0 10px 25px rgba(111, 0, 255, 0.2); transition: transform 0.5s ease, box-shadow 0.5s ease; color: #3B0270; }
+    .memory:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(111, 0, 255, 0.4); }
+    .memory img { width: 100%; border-radius: 15px; transition: all 0.5s ease; }
+    .memory img:hover { transform: rotate(1deg) scale(1.05); }
+    .memory p { margin-top: 10px; font-weight: 600; color: #3B0270; }
     .memory:nth-child(odd) { animation: slideLeft 1.2s ease; }
     .memory:nth-child(even) { animation: slideRight 1.2s ease; }
 
     /* FINAL MESSAGE */
-    .final-message {
-      background: rgba(255, 241, 241, 0.9);
-      text-align: center;
-      padding: 60px 30px;
-      border-top: 3px solid rgba(111, 0, 255, 0.3);
-      border-bottom: 3px solid rgba(111, 0, 255, 0.3);
-      margin-top: 80px;
-      animation: fadeInUp 1.5s ease;
-      color: #3B0270;
-    }
-    .final-message h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .final-message p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: rgba(59, 2, 112, 0.9);
-    }
+    .final-message { background: rgba(255, 241, 241, 0.9); text-align: center; padding: 60px 30px; border-top: 3px solid rgba(111, 0, 255, 0.3); border-bottom: 3px solid rgba(111, 0, 255, 0.3); margin-top: 80px; animation: fadeInUp 1.5s ease; color: #3B0270; }
+    .final-message h2 { font-size: 2rem; margin-bottom: 20px; }
+    .final-message p { max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.7; color: rgba(59, 2, 112, 0.9); }
   </style>
 </head>
 <body>
@@ -179,59 +74,52 @@
 
     <div class="voice-section">
       <h2>🎵 Play VM ni Rods 💬</h2>
-      <audio controls src="rodsvm.aac"></audio>
+      <audio id="vm-audio" controls src="rodsvm.aac"></audio>
       <p>Play this voice message from Rods while you scroll 💜</p>
     </div>
   </header>
 
   <main>
-    <!-- Background music -->
-    <audio id="background-music" src="hbdsong.mp3" loop autoplay></audio>
+    <audio id="background-music" src="hbdsong.mp3" loop></audio>
 
     <script>
-      // Background music
-document.addEventListener('DOMContentLoaded', () => {
-  const bgMusic = document.getElementById('background-music');
-  bgMusic.volume = 0.1; // low volume
+      document.addEventListener('DOMContentLoaded', () => {
+        const bgMusic = document.getElementById('background-music');
+        const vmAudio = document.getElementById('vm-audio');
+        let bgPlaying = false;
 
-  // Try to play automatically
-  const playPromise = bgMusic.play();
-  if (playPromise !== undefined) {
-    playPromise
-      .then(() => {
-        console.log("Background music started automatically 🎵");
-      })
-      .catch(() => {
-        console.log("Autoplay blocked. Click anywhere to start music.");
-        // Add a one-time click listener to start music
-        const overlay = document.createElement('div');
-        overlay.style.position = 'fixed';
-        overlay.style.top = 0;
-        overlay.style.left = 0;
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.zIndex = 9999;
-        overlay.style.cursor = 'pointer';
-        overlay.style.background = 'rgba(0,0,0,0.0)'; // transparent
-        overlay.addEventListener('click', () => {
-          bgMusic.play();
-          overlay.remove();
+        // Function to start background music
+        function playBackgroundMusic() {
+          if (!bgPlaying) {
+            bgMusic.volume = 0.1;
+            bgMusic.play().catch(e => console.log("Autoplay blocked", e));
+            bgPlaying = true;
+          }
+        }
+
+        // Start background music on VM click
+        vmAudio.addEventListener('play', () => {
+          playBackgroundMusic();
         });
-        document.body.appendChild(overlay);
-      });
-  }
-});
 
-      // Generate memory sections
+        // Also start music when scrolling after VM clicked
+        window.addEventListener('scroll', () => {
+          if (vmAudio.currentTime > 0) {
+            playBackgroundMusic();
+          }
+        });
+      });
+
+      // =========================
+      // Generate Memory Sections
+      // =========================
       document.addEventListener('DOMContentLoaded', () => {
         const main = document.querySelector('main');
         const totalImages = 15;
         for (let i = 1; i <= totalImages; i++) {
           const div = document.createElement('div');
           div.className = 'memory';
-          div.innerHTML = `
-            <img src="a${i}.jpg" alt="Rem memory ${i}">
-          `;
+          div.innerHTML = `<img src="a${i}.jpg" alt="Rem memory ${i}">`;
           main.appendChild(div);
         }
 
@@ -265,9 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
           if (now - lastScroll < scrollDelay) return;
           lastScroll = now;
 
-          if (balloonCount < 50000000) {
+          if (balloonCount < 50) {
             createBalloons(5);
-            balloonCount += 3;
+            balloonCount += 5;
           }
         });
 
@@ -295,7 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Confetti animation
+      // =========================
+      // Confetti Animation
+      // =========================
       const canvas = document.getElementById('confetti-canvas');
       const ctx = canvas.getContext('2d');
       canvas.width = window.innerWidth;
