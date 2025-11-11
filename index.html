@@ -190,13 +190,37 @@
 
     <script>
       // Background music
-      document.addEventListener('DOMContentLoaded', () => {
-        const bgMusic = document.getElementById('background-music');
-        bgMusic.volume = 0.1; // low volume
-        bgMusic.play().catch(() => {
-          document.body.addEventListener('click', () => bgMusic.play(), { once: true });
+document.addEventListener('DOMContentLoaded', () => {
+  const bgMusic = document.getElementById('background-music');
+  bgMusic.volume = 0.1; // low volume
+
+  // Try to play automatically
+  const playPromise = bgMusic.play();
+  if (playPromise !== undefined) {
+    playPromise
+      .then(() => {
+        console.log("Background music started automatically 🎵");
+      })
+      .catch(() => {
+        console.log("Autoplay blocked. Click anywhere to start music.");
+        // Add a one-time click listener to start music
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.zIndex = 9999;
+        overlay.style.cursor = 'pointer';
+        overlay.style.background = 'rgba(0,0,0,0.0)'; // transparent
+        overlay.addEventListener('click', () => {
+          bgMusic.play();
+          overlay.remove();
         });
+        document.body.appendChild(overlay);
       });
+  }
+});
 
       // Generate memory sections
       document.addEventListener('DOMContentLoaded', () => {
