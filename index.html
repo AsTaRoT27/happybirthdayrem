@@ -153,7 +153,7 @@
           if (now - lastScroll < scrollDelay) return;
           lastScroll = now;
 
-          if (balloonCount < 50) {
+          if (balloonCount < 5000000) {
             createBalloons(5);
             balloonCount += 5;
           }
@@ -224,3 +224,4 @@
   </main>
 </body>
 </html>
+
