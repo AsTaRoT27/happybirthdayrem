@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Rem 💜</title>
+  <style>
+    /* BODY & GENERAL */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #FFF1F1, #E9B3FB, #6F00FF);
+      color: #3B0270;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 80px 20px 40px;
+      overflow: hidden;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #3B0270;
+      animation: fadeInDown 1s ease;
+      position: relative;
+      z-index: 2;
+    }
+    header p {
+      color: rgba(59, 2, 112, 0.8);
+      font-size: 1.1rem;
+      animation: fadeIn 2s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* HEADER BALLOONS */
+    .header-balloon {
+      position: absolute;
+      width: 50px;
+      height: auto;
+      opacity: 0.8;
+      animation: floatUp 6s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100%); opacity: 0.8; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-150%); opacity: 0; }
+    }
+
+    /* CONFETTI */
+    #confetti-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* VOICE SECTION */
+    .voice-section {
+      margin-top: 30px;
+      animation: fadeInUp 1.5s ease;
+    }
+    .voice-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #3B0270;
+    }
+    .voice-section audio {
+      width: 80%;
+      max-width: 500px;
+      border: 2px solid #3B0270;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(111, 0, 255, 0.3);
+    }
+
+    /* MEMORY SECTIONS */
+    main {
+      padding: 60px 20px;
+      position: relative;
+      z-index: 0;
+    }
+    .memory {
+      background: rgba(255, 241, 241, 0.85); 
+      border: 1px solid #E9B3FB;
+      border-radius: 20px;
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(111, 0, 255, 0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      color: #3B0270;
+    }
+    .memory:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(111, 0, 255, 0.4);
+    }
+    .memory img {
+      width: 100%;
+      border-radius: 15px;
+      transition: all 0.5s ease;
+    }
+    .memory img:hover {
+      transform: rotate(1deg) scale(1.05);
+    }
+    .memory p {
+      margin-top: 10px;
+      font-weight: 600;
+      color: #3B0270;
+    }
+    .memory:nth-child(odd) { animation: slideLeft 1.2s ease; }
+    .memory:nth-child(even) { animation: slideRight 1.2s ease; }
+
+    /* FINAL MESSAGE */
+    .final-message {
+      background: rgba(255, 241, 241, 0.9);
+      text-align: center;
+      padding: 60px 30px;
+      border-top: 3px solid rgba(111, 0, 255, 0.3);
+      border-bottom: 3px solid rgba(111, 0, 255, 0.3);
+      margin-top: 80px;
+      animation: fadeInUp 1.5s ease;
+      color: #3B0270;
+    }
+    .final-message h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .final-message p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(59, 2, 112, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <canvas id="confetti-canvas"></canvas>
+
+    <h1>Happy Birthday, Rem! 💜</h1>
+    <p>A fun, scrollable website full of beauty and joy 🎉</p>
+
+    <!-- Floating balloons -->
+    <img src="rem.png" class="header-balloon" style="left:10%; animation-delay: 0s;">
+    <img src="rem.png" class="header-balloon" style="left:30%; animation-delay: 2s;">
+    <img src="rem.png" class="header-balloon" style="left:60%; animation-delay: 1s;">
+    <img src="rem.png" class="header-balloon" style="left:80%; animation-delay: 3s;">
+
+    <div class="voice-section">
+      <h2>🎵 Play VM ni Rods 💬</h2>
+      <audio controls src="rodsvm.aac"></audio>
+      <p>Play this voice message from Rods while you scroll 💜</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Background music -->
+    <audio id="background-music" src="hbdsong.mp3" loop autoplay></audio>
+
+    <script>
+      // Background music
+      document.addEventListener('DOMContentLoaded', () => {
+        const bgMusic = document.getElementById('background-music');
+        bgMusic.volume = 0.1; // low volume
+        bgMusic.play().catch(() => {
+          document.body.addEventListener('click', () => bgMusic.play(), { once: true });
+        });
+      });
+
+      // Generate memory sections
+      document.addEventListener('DOMContentLoaded', () => {
+        const main = document.querySelector('main');
+        const totalImages = 15;
+        for (let i = 1; i <= totalImages; i++) {
+          const div = document.createElement('div');
+          div.className = 'memory';
+          div.innerHTML = `
+            <img src="a${i}.jpg" alt="Rem memory ${i}">
+          `;
+          main.appendChild(div);
+        }
+
+        // Final message
+        const msgSection = document.createElement('section');
+        msgSection.className = 'final-message';
+        msgSection.innerHTML = `
+          <h2>💜 A Message from Rods 💜</h2>
+          <p>
+            tiisin mo nalang mga pinagsasabi ko HAHAHHAH sa vm 😆  
+            Remmmmmmmm, salamat sa lahat ng tawanan, kwentuhan, at mga moments natin.  
+            Alam mo, sobrang thankful ako na nakilala kita — since sa random chat na biglaan  
+            nagcall pakita man ta rupam ay HAHAHAHAH. Hindi lang dahil masaya kang kausap,  
+            pero dahil napakagenuine mo, totoo, at palaging good vibes lang (ngiti pay lang ammo mon e 😁).  
+            Sana kahit anong mangyari, magstay ka kung sino ka ngayon: kind, happy, and strong.  
+            I hope this website reminds you how special you are and how much you’re appreciated.  
+            Continue to smile, laugh loud, and chase your dreams.  
+            Happy birthday ulit, Rem! 💜  
+            - from Rods 💜
+          </p>
+        `;
+        main.appendChild(msgSection);
+
+        // Balloon scroll effect
+        let balloonCount = 0;
+        let lastScroll = 0;
+        const scrollDelay = 500;
+
+        window.addEventListener('scroll', () => {
+          const now = Date.now();
+          if (now - lastScroll < scrollDelay) return;
+          lastScroll = now;
+
+          if (balloonCount < 50000000) {
+            createBalloons(5);
+            balloonCount += 3;
+          }
+        });
+
+        function createBalloons(num) {
+          for (let i = 0; i < num; i++) {
+            const balloon = document.createElement('img');
+            balloon.src = 'rem.png';
+            balloon.style.position = 'fixed';
+            balloon.style.width = window.innerWidth <= 768 ? '50px' : '80px';
+            balloon.style.height = 'auto';
+            balloon.style.left = Math.random() * (window.innerWidth - 80) + 'px';
+            balloon.style.top = Math.random() * (window.innerHeight - 120) + 'px';
+            balloon.style.zIndex = 999;
+            balloon.style.transition = 'transform 0.5s ease, opacity 1s ease';
+            if (Math.random() > 0.5) balloon.style.transform = 'scaleX(-1)';
+            document.body.appendChild(balloon);
+
+            setTimeout(() => {
+              balloon.style.top = parseFloat(balloon.style.top) - 200 + 'px';
+              balloon.style.opacity = 0;
+            }, 100);
+
+            setTimeout(() => balloon.remove(), 2000);
+          }
+        }
+      });
+
+      // Confetti animation
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let confettis = Array.from({length:50}, () => ({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*6+4,
+        d: Math.random()*50+50,
+        color: `hsl(${Math.random()*360},100%,60%)`,
+        tilt: Math.random()*10-5
+      }));
+
+      function drawConfetti() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        confettis.forEach(c => {
+          ctx.beginPath();
+          ctx.moveTo(c.x + c.tilt, c.y);
+          ctx.lineTo(c.x + c.tilt + c.r/2, c.y + c.r);
+          ctx.lineTo(c.x + c.tilt - c.r/2, c.y + c.r);
+          ctx.fillStyle = c.color;
+          ctx.fill();
+          c.y += 2;
+          if(c.y > canvas.height) c.y = -10;
+        });
+        requestAnimationFrame(drawConfetti);
+      }
+      drawConfetti();
+
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    </script>
+  </main>
+</body>
+</html>
